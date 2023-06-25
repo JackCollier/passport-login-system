@@ -9,6 +9,9 @@ const {
   getRegister,
   postRegister,
 } = require("./controllers/server-controllers");
+const flash = require("express-flash");
+const session = require("express-session");
+const passport = require("passport");
 
 const app = express();
 
