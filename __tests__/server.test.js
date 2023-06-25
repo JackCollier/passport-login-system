@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../server");
+const { app } = require("../server");
 
 describe("GET /", () => {
   test("Should respond with 200 status and type text/html", () => {
