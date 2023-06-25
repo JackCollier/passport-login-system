@@ -1,7 +1,13 @@
 const bcrypt = require("bcrypt");
+const passport = require("passport");
 
 // for production connect to DB - definitely don't store them here...
 const user_storage = [];
+
+const initializePassport = require("../passport-config");
+initializePassport(passport, (email) => {
+  return users.find((user) => user.email === email);
+});
 
 exports.getStaticPage = (req, res) => {
   res.render("index.ejs");
