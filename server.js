@@ -6,9 +6,13 @@ const {
   postRegister,
 } = require("./controllers/server-controllers");
 
+// for production connect to DB - definitely don't store them here...
+const users = [];
+
 const app = express();
 
 app.set("view-engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
 
 app.get("/", getStaticPage);
 
