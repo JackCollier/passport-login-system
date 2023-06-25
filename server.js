@@ -3,6 +3,7 @@ const {
   getStaticPage,
   getLogin,
   getRegister,
+  postRegister,
 } = require("./controllers/server-controllers");
 
 const app = express();
@@ -14,6 +15,8 @@ app.get("/", getStaticPage);
 app.get("/login", getLogin);
 
 app.get("/register", getRegister);
+
+app.post("/register", postRegister);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
