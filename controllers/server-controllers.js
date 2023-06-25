@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 exports.getStaticPage = (req, res) => {
   res.render("index.ejs");
 };
@@ -9,3 +11,7 @@ exports.getLogin = (req, res) => {
 exports.getRegister = (req, res) => {
   res.render("register.ejs");
 };
+
+exports.postRegister = (req, res) => {};
+
+exports.postLogin = (req, res) => {};
