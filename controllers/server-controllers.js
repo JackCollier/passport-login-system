@@ -5,10 +5,11 @@ const passport = require("passport");
 const user_storage = [];
 
 const initializePassport = require("../passport-config");
-initializePassport(passport, (email) => {
-  return users.find((user) => user.email === email);
-});
-
+initializePassport(
+  passport,
+  (email) => user_storage.find((user) => user.email === email),
+  (id) => user_storage.find((user) => user.id === id)
+);
 exports.getStaticPage = (req, res) => {
   res.render("index.ejs");
 };
